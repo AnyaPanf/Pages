@@ -151,7 +151,7 @@ button {
 .main__btn:hover {
   background-color: #1b3764;
   color: beige;
-} 
+}
 
 .main__img {
   max-width: 390px;
@@ -167,7 +167,7 @@ button {
 
 .books__title {
   font-family: 'DM Serif Display', serif;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 400;
   color: #1b3764;
   padding: 20px 0;
@@ -188,13 +188,13 @@ button {
   display: flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px; 
+  font-size: 16px;
   color: #1b3764;
 }
 
 .books__wrapper {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin: 30px 0;
 }
@@ -246,16 +246,16 @@ button {
 }
 
 .book__btn:hover {
-  background-color:#ffca42;
+  background-color: #ffca42;
   color: beige;
   cursor: pointer;
-} 
+}
 
 .books__pagination {
   display: flex;
   justify-content: center;
- position: relative; 
- margin: 60px 0 30px;
+  position: relative;
+  margin: 60px 0 30px;
 }
 
 .books__pagination::before {
@@ -298,29 +298,78 @@ button {
   object-fit: cover;
 }
 
-/* LIST */
+/* POSTS */
 
-.list {
+.posts {
   background-color: #ffca42;
 }
 
-.list__title {
+.posts__title {
   font-family: 'DM Serif Display', serif;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 400;
-  color: beige;
+  color: #1b3764;
   padding: 20px 0;
   text-align: center;
   position: relative;
 }
 
-.list__title::before {
+.posts__title::before {
   content: "";
   position: absolute;
   left: 48%;
-  top: 65px;
+  top: 75px;
   width: 50px;
-  border: 1px solid #1b3764;
+  border: 1px solid beige;
+}
+
+.posts__wrapper {
+  padding: 30px 0 50px;
+}
+
+.posts__post {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  margin-bottom: 20px;
+  background-color: beige;
+  filter: drop-shadow(#cccdce 3px 3px 5px);
+}
+
+.posts__post:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.posts__info {
+  padding: 10px;
+}
+
+.posts__subtitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #1b3764;
+  margin-bottom: 10px;
+}
+
+.posts__text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #1b3764;
+}
+
+.posts__number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1b3764;
+  margin: 10px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: beige;
+  text-align: center;
+  padding-top: 7px;
 }
 
 /* FOOTER */

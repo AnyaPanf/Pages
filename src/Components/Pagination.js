@@ -2,38 +2,37 @@ import React from 'react'
 import Pagination_left from "../assets/Pagination_left.png"
 import Pagination_right from "../assets/Pagination_right.png"
 
-export const Pagination = ({ books, booksPerPage, handleMin, handlePl, handleNum }) => {
+export const Pagination = ({ books, booksPerPage, setCurrentPage, currentPage }) => {
     const pageNumbers = [];
-
     for (let i = 1; i <= Math.ceil(books / booksPerPage); i++) {
         pageNumbers.push(i);
     }
 
     const handleMinus = () => {
-        handleMin()
+        setCurrentPage(prev => prev - 1)
     }
 
     const handlePlus = () => {
-        handlePl()
+        setCurrentPage(prev => prev + 1)
     }
 
     const handleClick = (e) => {
-        handleNum(Number(e.target.innerText))
+        setCurrentPage(Number(e.target.innerText))
     }
 
     return (
         <div className='books__pagination'>
-            <div className='pagination__arrow'>
+            <button className='pagination__arrow' disabled={currentPage === 1}>
                 <img src={Pagination_left} onClick={handleMinus} />
-            </div>
+            </button>
             <div className='books__numbers'>
                 {pageNumbers.map((number) => (
                     <p onClick={handleClick}>{number}</p>
                 ))}
             </div>
-            <div className='pagination__arrow'>
+            <button className='pagination__arrow' disabled={currentPage === Math.ceil(books / booksPerPage)}>
                 <img src={Pagination_right} onClick={handlePlus} />
-            </div>
+            </button>
         </div>
     )
 }

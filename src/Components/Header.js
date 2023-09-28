@@ -14,7 +14,7 @@ export const Header = () => {
                         <nav className='header__nav'>
                             <NavLink to="/" className="header__link">Home</NavLink>
                             <NavLink to="/books" className="header__link">Books</NavLink>
-                            <NavLink to="/list" className="header__link">Your list</NavLink>
+                            <NavLink to="/posts" className="header__link">Posts</NavLink>
                         </nav>
                     </div>
                 </div>

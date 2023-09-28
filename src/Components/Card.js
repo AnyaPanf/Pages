@@ -1,19 +1,15 @@
 import React from 'react'
 
-export const Card = ({ key, bookImg, title, handleAddToList }) => {
-
-    const handleAdd = () => {
-        handleAddToList(key)
-    }
+export const Card = ({ id, bookImg, title, handleAddToList }) => {
 
     return (
-        <div className='books__card' key={key}>
+        <div className='books__card' id={id}>
             <div className='book__img'>
                 <img src={bookImg} />
             </div>
             <div className='book__info'>
                 <p className='book__title'>{title}</p>
-                <button type='button' className='book__btn' onClick={handleAdd}>Add to list</button>
+                <button type='button' className='book__btn'>Add to list</button>
             </div>
         </div>
     )

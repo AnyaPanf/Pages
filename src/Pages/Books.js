@@ -4,8 +4,13 @@ import { getPhotos } from '../API/getPhotos';
 import { Card } from '../Components/Card';
 import { Pagination } from '../Components/Pagination';
 
-export const Books = ({ books, setBooks, booksPerPage, setBooksPerPage, currentBooks, handleMin, handlePl, handleNum, handleAddToList }) => {
+export const Books = ({ books, setBooks }) => {
     const booksOnPage = [5, 10, 20, 30, 40, 50, 100]
+    const [currentPage, setCurrentPage] = useState(1)
+    const [booksPerPage, setBooksPerPage] = useState(20)
+    const indexOfLastBook = currentPage * booksPerPage;
+    const indexOfFirstBook = indexOfLastBook - booksPerPage;
+    const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook)
 
     const handleInput = (e) => {
         setBooksPerPage(e.target.value)
@@ -33,11 +38,11 @@ export const Books = ({ books, setBooks, booksPerPage, setBooksPerPage, currentB
                 </div>
                 <div className='books__wrapper'>
                     {currentBooks.map((book) => (
-                        <Card key={book.id} bookImg={book.thumbnailUrl} title={book.title} handleAddToList={handleAddToList} />
+                        <Card id={book.id} bookImg={book.thumbnailUrl} title={book.title} />
                     ))
                     }
                 </div>
-                <Pagination books={books.length} booksPerPage={booksPerPage} handleMin={handleMin} handlePl={handlePl} handleNum={handleNum} />
+                <Pagination books={books.length} booksPerPage={booksPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
             </div>
         </section>
     )
