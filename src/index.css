@@ -4,12 +4,8 @@
   box-sizing: border-box;
 }
 
-/* font-family: 'DM Serif Display', serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Passion One', cursive; */
-
 .container {
-  max-width: 1200px;
+  max-width: 1230px;
   padding: 0 15px;
   margin: 0 auto
 }
@@ -123,6 +119,7 @@ button {
 
 .main__title {
   font-family: 'DM Serif Display', serif;
+  max-width: 700px;
   font-size: 61px;
   font-weight: 400;
   color: beige;
@@ -207,7 +204,7 @@ button {
 }
 
 .book__img {
-  width: 150px;
+  max-width: 150px;
   filter: drop-shadow(#dae0e8 5px 8px 5px);
 }
 
@@ -330,6 +327,7 @@ button {
 .posts__post {
   display: grid;
   grid-template-columns: 5% 95%;
+  gap: 15px;
   margin-bottom: 20px;
   background-color: beige;
   filter: drop-shadow(#cccdce 3px 3px 5px);
@@ -376,6 +374,7 @@ button {
 
 .footer {
   background-color: #1b3764;
+  overflow: hidden;
 }
 
 .footer__wrapper {
@@ -454,8 +453,89 @@ button {
   font-size: 14px;
   color: beige;
   margin-top: 13px;
+  gap: 15px;
 }
 
 .footer__link:hover {
   color: #ffca42;
+}
+
+
+@media (max-width: 960px) {
+
+  .books__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .books__onpage select {
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .main__title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+  }
+
+  .main__desc {
+    font-size: 16px;
+  }
+
+  .main__btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .main__title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+  }
+
+  .main__desc {
+    font-size: 16px;
+  }
+
+  .footer__address,
+  .footer__mail,
+  .footer__phone {
+    grid-template-columns: 30% 70%;
+  }
+
+  .posts__title::before {
+    top: 115px;
+  }
+}
+
+@media (max-width: 699px) {
+  .books__wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .main__title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main__wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .main__text {
+    margin-bottom: 40px;
+  }
+
+  .footer__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .posts__title::before {
+    top: 150px;
+  }
 }
